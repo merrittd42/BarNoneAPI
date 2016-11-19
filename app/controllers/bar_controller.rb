@@ -1,5 +1,6 @@
 class BarController < ApplicationController
   def index
+
     latitude = latitude_and_longitude[0].to_f
     longitude = latitude_and_longitude[1].to_f
 
@@ -9,6 +10,7 @@ class BarController < ApplicationController
         longitude: [longitude - 1, longitude + 1]
         )
     }
+
   end
 
   private
