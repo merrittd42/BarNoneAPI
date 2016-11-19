@@ -1,0 +1,22 @@
+<h1> Listing Bars </h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+      <th>Name</th>
+      <th>Edit</th>
+    </tr>
+
+    <%@bars.each do |bar| %>
+    <tr>
+      <td><%= bar.id %></td>
+      <td><%= bar.name %></td>
+      <td><a href="/admin/update/<%= bar.id %>">Edit</a></td>
+      <td><a href="/admin/delete/<%= bar.id %>">Delte</a></td>
+    </tr>
+    <%end%>
+  </table>
+
+  <br>
+
+  <a href="/admin/new/"> New Bar </a>
