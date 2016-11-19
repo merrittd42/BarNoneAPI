@@ -25,8 +25,6 @@ Things you may want to cover:
 
 ## API
 
-| Rest Verb | Path   | Description   |
-|-----------|--------|---------------|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+| Rest Verb | Path   | Params | Param Type | Description   |
+|-----------|--------|--------|------------|---------------|
+| POST | bars | latitude, longitude | BODY | returns the list of bars within a variance of latitude and logitutde |
