@@ -16,7 +16,11 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+<<<<<<< HEAD
 module BarNoneAPI
+=======
+module BarnoneAPI
+>>>>>>> ac662da78eb1c8077e6f53d780c740eabccec903
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

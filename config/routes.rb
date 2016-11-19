@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'admin', controller: :admin, action: :index
 
   get 'admin/view/:id', controller: :admin, action: :view
@@ -15,4 +16,7 @@ Rails.application.routes.draw do
 
   get 'bars', to: 'bar#index'
 
+=======
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+>>>>>>> ac662da78eb1c8077e6f53d780c740eabccec903
 end

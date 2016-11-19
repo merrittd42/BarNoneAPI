@@ -121,6 +121,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   listen (~> 3.0.5)
+<<<<<<< HEAD
   puma (~> 3.0)
   rails (~> 5.0.0)
   spring
@@ -130,3 +131,14 @@ DEPENDENCIES
 
 BUNDLED WITH
    1.13.6
+=======
+  pg (~> 0.18)
+  puma (~> 3.0)
+  rails (~> 5.0.0, >= 5.0.0.1)
+  spring
+  spring-watcher-listen (~> 2.0.0)
+  tzinfo-data
+
+BUNDLED WITH
+   1.13.1
+>>>>>>> ac662da78eb1c8077e6f53d780c740eabccec903
