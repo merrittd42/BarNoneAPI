@@ -6,22 +6,22 @@ class AdminController < ActionController::Base
 
   def view
     @bar = Bar.find(bar_id)
-    if @bar != nil
-      render :view
-    else
-      redirect_to :index
-    end
+    render :view
   end
 
   def delete
-    render json: Bar.find_by(bar_id).destroy
+    Bar.find_by(bar_id).destroy
+    redirect_to controller: :admin, action: :index
   end
 
   def update
+    bar = Bar.find_by bar_id
+    bar.update = params
+    redirect_to controller: :admin, action: :index
   end
 
   def add
-    print params
+    Bar.create(params)
     redirect_to controller: :admin, action: :index
   end
 
