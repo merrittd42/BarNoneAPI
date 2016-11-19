@@ -1,0 +1,2 @@
+class BarCategory < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class BarComment < ApplicationRecord
+end
