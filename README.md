@@ -28,3 +28,7 @@ Things you may want to cover:
 | Rest Verb | Path   | Params | Param Type | Description   |
 |-----------|--------|--------|------------|---------------|
 | POST | bars | latitude, longitude | BODY | returns the list of bars within a variance of latitude and logitutde |
+| GET | bar-admin | | | returns a list of all bars within the system |
+| POST | bars-admin | < all bar parameters > | BODY | adds a bar to the system |
+| PUT | bars-admin/{id} | <all bars params > | BODY | updates a bar in the system |
+| DELETE | bars-admin/{id} | id | URL | deletes a bar in the system |
