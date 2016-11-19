@@ -1,10 +1,16 @@
-class AdminController < ApplicationController
+class AdminController < ActionController::Base
   def index
-    render json: Bar.all
+    @bars = Bar.all
+    render :index
   end
 
   def view
-    render json: Bar.find(bar_id)
+    @bar = Bar.find(bar_id)
+    if @bar != nil
+      render :view
+    else
+      redirect_to :index
+    end
   end
 
   def delete
@@ -15,6 +21,10 @@ class AdminController < ApplicationController
   end
 
   def add
+  end
+
+  def new
+    render :new
   end
 
   private
