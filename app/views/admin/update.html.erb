@@ -1,0 +1,17 @@
+<% bar = @bar %>
+<form method="post" action="/admin/save/<%= bar.id %>">
+  Name: <input type="text" name="name" value="<%= bar.name %>"/> <br/>
+  Latitude: <input type="text" name="latitude" value="<%= bar.latitude %>" /> <br/>
+  Longitude: <input type="text" name="longitude" value="<%= bar.longitude %>" /> <br/>
+  Description: <input type="text" name="description" value="<%= bar.description %>" /> <br/>
+  Rating: <input type="text" name="rating" value="<%= bar.rating %>"/> <br/>
+  Loudness: <input type="text" name="loudness" value="<%= bar.loudness %>" /> <br/>
+  Crowdedness: <input type="text" name="crowdedness" value="<%= bar.crowdedness %>"/> <br/>
+  Category: <input type="text" name="bar_category" value="<%= bar.bar_category %>"/> <br/>
+  Address: <input type="text" name="address" value="<%= bar.address %>" /> <br/>
+  Person Count: <input type="text" name="person_count" value="<%= bar.person_count %>" /> <br/>
+  Rating Count: <input type="text" name="rating_count" value="<%= bar.rating_count %>" /> <br/>
+  Loudness Count: <input type="text" name="loudness_count" value="<%= bar.loudness_count %>" /> <br/>
+  Croudedness Count <input type="text" name="crowdedness_count" value="<%= bar.crowdedness_count %>" /> <br/>
+  <input type="submit" value="Submit" />
+</form>
