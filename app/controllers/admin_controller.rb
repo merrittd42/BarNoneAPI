@@ -21,6 +21,8 @@ class AdminController < ActionController::Base
   end
 
   def add
+    print params
+    redirect_to controller: :admin, action: :index
   end
 
   def new
@@ -32,4 +34,6 @@ class AdminController < ActionController::Base
   def bar_id
     params.require(:id)
   end
+
+
 end
