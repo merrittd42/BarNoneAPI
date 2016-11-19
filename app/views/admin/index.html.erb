@@ -12,7 +12,7 @@
       <td><%= bar.id %></td>
       <td><%= bar.name %></td>
       <td><a href="/admin/update/<%= bar.id %>">Edit</a></td>
-      <td><%= link_to "delete", bar, method: :delete, data: {confirm: "You wanna?:"} %></td>
+      <td><a href="/admin/delete/<%= bar.id %>">Delte</a></td>
     </tr>
     <%end%>
   </table>
