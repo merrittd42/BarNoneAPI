@@ -4,7 +4,7 @@ class BarController < ApplicationController
     longitude = latitude_and_longitude[1].to_f
 
     render json: {
-      bars: Bar.where (
+      bars: Bar.where(
         latitude: [latitude - 1, latitude + 1],
         longitude: [longitude - 1, longitude + 1]
         )
