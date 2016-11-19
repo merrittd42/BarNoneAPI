@@ -1,1 +1,15 @@
 <%= @bars %>
+<h1> Listing Bars </h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+      <th>Name</th>
+      <th>Edit</th>
+    </tr>
+
+    <%@bars.each do |bar| %>
+    <tr>
+      <td><%= bar.id %></td>
+      <td><%= bar.name %></td>
+      <td><%= link_to "Edit">
