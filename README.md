@@ -36,4 +36,4 @@ Things you may want to cover:
 
 ## SCHEMA
 
-!(schema)[schema.png]
+![schema](schema.png)
