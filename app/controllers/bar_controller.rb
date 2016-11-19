@@ -1,14 +1,20 @@
 class BarController < ApplicationController
   def index
-    latitude = latitude_and_longitude[0].to_f
-    longitude = latitude_and_longitude[1].to_f
+    begin
+      latitude = latitude_and_longitude[0].to_f
+      longitude = latitude_and_longitude[1].to_f
 
-    render json: {
-      bars: Bar.where(
-        latitude: [latitude - 1, latitude + 1],
-        longitude: [longitude - 1, longitude + 1]
-        )
-    }
+      render json: {
+        bars: Bar.where(
+          latitude: [latitude - 1, latitude + 1],
+          longitude: [longitude - 1, longitude + 1]
+          )
+      }
+    rescue Exception => e
+      print 'ERROR'
+      puts e
+      render json: { bars: []}
+    end
   end
 
   private
