@@ -23,9 +23,7 @@ Things you may want to cover:
 
 * ...
 
-<<<<<<< HEAD
-Bova wuz here
-=======
+
 ## API
 
 | Rest Verb | Path   | Params | Param Type | Description   |
@@ -35,4 +33,7 @@ Bova wuz here
 | POST | bars-admin | < all bar parameters > | BODY | adds a bar to the system |
 | PUT | bars-admin/{id} | < all bars params > | BODY | updates a bar in the system |
 | DELETE | bars-admin/{id} | id | URL | deletes a bar in the system |
->>>>>>> aab21b369b25a992e43451333fc73397b9164105
+
+## SCHEMA
+
+!(schema)[schema.png]
