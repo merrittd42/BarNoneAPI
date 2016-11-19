@@ -23,4 +23,16 @@ Things you may want to cover:
 
 * ...
 
+<<<<<<< HEAD
 Bova wuz here
+=======
+## API
+
+| Rest Verb | Path   | Params | Param Type | Description   |
+|-----------|--------|--------|------------|---------------|
+| POST | bars | latitude, longitude | BODY | returns the list of bars within a variance of latitude and logitutde |
+| GET | bars-admin | | | returns a list of all bars within the system |
+| POST | bars-admin | < all bar parameters > | BODY | adds a bar to the system |
+| PUT | bars-admin/{id} | < all bars params > | BODY | updates a bar in the system |
+| DELETE | bars-admin/{id} | id | URL | deletes a bar in the system |
+>>>>>>> aab21b369b25a992e43451333fc73397b9164105
