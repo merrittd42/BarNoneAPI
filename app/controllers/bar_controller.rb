@@ -31,18 +31,18 @@ class BarController < ApplicationController
       barID = params[:id].to_i
 
       barToChange = Bar.find(barID)
-      newCrowdedness = barToChange.crowdedness + barCrowdedness
+      newCrowdedness = (barToChange.crowdedness*barToChange.crowdedness_count) + barCrowdedness
       barToChange.crowdedness_count +=1
-      barToChange.crowdedness = newCrowdedness/barToChange.crowdedness_count
-      newRating = barRating + barToChange.rating
+      barToChange.update(crowdedness: newCrowdedness/barToChange.crowdedness_count)
+      newRating = (barToChange.rating*barToChange.rating_count) + barRating
       barToChange.rating_count+=1
-      barToChange.rating = newRating/barToChange.rating_count
-      barToChange.loudness = barLoudness
-      newLoudness = barToChange.loudness + barLoudness
+      barToChange.update(rating: newRating/barToChange.rating_count)
+      newLoudness = (barToChange.loudness*barToChange.loudness_count) + barLoudness
       barToChange.loudness_count +=1
-      barToChange.loudness = newLoudness/barToChange.loudness_count
-
-    rescue
+      barToChange.update(loudness: newLoudness/barToChange.loudness_count)
+      puts barToChange.to_s
+      barToChange.save
+    rescue => e
       print 'ERROR'
       puts e
       render json: { bars: []}
@@ -68,7 +68,7 @@ class BarController < ApplicationController
         t.save
       end
 
-    rescue
+    rescue => e
       print 'ERROR'
       puts e
       render json: { bars: []}
