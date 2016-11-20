@@ -64,8 +64,8 @@ class AdminController < ActionController::Base
 
   def bar_item
     { name: params["name"],
-      latitude: params["latitude"].to_f,
-      longitude: params["longitude"].to_f,
+      latitude: params["latitude"].to_d,
+      longitude: params["longitude"].to_d,
       description: params["description"],
       rating: params["rating"].to_i,
       loudness: params["loudness"].to_i,

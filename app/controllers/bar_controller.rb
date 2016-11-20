@@ -1,8 +1,8 @@
 class BarController < ApplicationController
   def index
     begin
-      latitude = latitude_and_longitude[0].to_f
-      longitude = latitude_and_longitude[1].to_f
+      latitude = latitude_and_longitude[0].to_d
+      longitude = latitude_and_longitude[1].to_d
 
       bars = Bar.where(
       "latitude >= :latitudeLow AND latitude <= :latitudeHigh AND longitude >= :longitudeLow AND longitude <= :longitudeHigh",
