@@ -17,6 +17,6 @@ Rails.application.routes.draw do
 
   post 'bars/review/:id', controller: :bar, action: :updateRating
 
-  post 'bars/:id', controller: :bar, action: :updateCount
+  post 'bars/update-count', controller: :bar, action: :updateCount
 
 end
