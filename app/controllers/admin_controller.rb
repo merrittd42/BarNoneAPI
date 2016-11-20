@@ -15,21 +15,21 @@ class AdminController < ActionController::Base
 
   def delete
     safe do
-      Bar.find_by(bar_id).destroy
+      Bar.find(bar_id).destroy
       redirect_to controller: :admin, action: :index
     end
   end
 
   def update
     safe do
-      @bar = Bar.find_by bar_id
+      @bar = Bar.find bar_id
       render :update
     end
   end
 
   def save
     safe do
-      bar = Bar.find_by bar_id
+      bar = Bar.find bar_id
       bar.attributes = bar_item
       bar.save
       redirect_to controller: :admin, action: :index
@@ -64,8 +64,8 @@ class AdminController < ActionController::Base
 
   def bar_item
     { name: params["name"],
-      latitude: params["latitude"].to_f,
-      longitude: params["longitude"].to_f,
+      latitude: params["latitude"].to_d,
+      longitude: params["longitude"].to_d,
       description: params["description"],
       rating: params["rating"].to_i,
       loudness: params["loudness"].to_i,
