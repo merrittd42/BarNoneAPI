@@ -4,12 +4,14 @@ class BarController < ApplicationController
       latitude = latitude_and_longitude[0].to_f
       longitude = latitude_and_longitude[1].to_f
 
-      render json: {
-        bars: Bar.where(
-          latitude: [latitude - 1, latitude + 1],
-          longitude: [longitude - 1, longitude + 1]
-          )
-      }
+      bars = Bar.where(
+      "latitude >= :latitudeLow AND latitude <= :latitudeHigh AND longitude >= :longitudeLow AND longitude <= :longitudeHigh",
+      {latitudeLow: latitude - .0005, latitudeHigh: latitude +.0005, longitudeLow: longitude -.0005, longitudeHigh: longitude +.0005}
+
+      )
+
+      render json: {bars: bars}
+
     rescue Exception => e
       print 'ERROR'
       puts e
