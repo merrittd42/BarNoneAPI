@@ -6,7 +6,7 @@ class BarController < ApplicationController
 
       bars = Bar.where(
       "latitude >= :latitudeLow AND latitude <= :latitudeHigh AND longitude >= :longitudeLow AND longitude <= :longitudeHigh",
-      {latitudeLow: latitude - 0.0005, latitudeHigh: latitude + 0.0005, longitudeLow: longitude - 0.0005, longitudeHigh: longitude + 0.0005}
+      {latitudeLow: latitude - 0.0072, latitudeHigh: latitude + 0.0072, longitudeLow: longitude - 0.0072, longitudeHigh: longitude + 0.0072}
 
       )
 
