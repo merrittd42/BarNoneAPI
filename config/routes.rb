@@ -15,4 +15,8 @@ Rails.application.routes.draw do
 
   get 'bars', to: 'bar#index'
 
+  post 'bars/review/:id', controller: :bar, action: :updateReview
+
+  post 'bars/:id', controller: :bar, action: :updateCount
+
 end
