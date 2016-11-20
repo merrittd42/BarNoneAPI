@@ -4,6 +4,8 @@ class BarController < ApplicationController
       latitude = latitude_and_longitude[0].to_d
       longitude = latitude_and_longitude[1].to_d
 
+      #googleBarMap = map_fetch(latitude, longitude)
+
       bars = Bar.where(
       "latitude >= :latitudeLow AND latitude <= :latitudeHigh AND longitude >= :longitudeLow AND longitude <= :longitudeHigh",
       {latitudeLow: latitude - 0.0072, latitudeHigh: latitude + 0.0072, longitudeLow: longitude - 0.0072, longitudeHigh: longitude + 0.0072}
@@ -19,7 +21,7 @@ class BarController < ApplicationController
     end
   end
 
-  def updateReview
+  def updateRating
 
     begin
 
@@ -79,4 +81,16 @@ class BarController < ApplicationController
   def latitude_and_longitude
     params.require([:latitude, :longitude])
   end
+
+  def map_fetch(lat, lng)
+    # wowie api key here dnt steel pls
+
+    @client = GooglePlaces::Client.new(
+      "AIzaSyDDQRzU5pfLquWI8oDOHT0FLfsyt8Z0Vpw")
+
+    spots = @client.spots(lat, lng, 8046.72,
+      :types => 'bar')
+    return spots
+  end
+
 end
